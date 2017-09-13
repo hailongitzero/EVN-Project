@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\DocumentCategory;
+use App\PictureLibrary;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,6 +19,7 @@ class IndexController extends CommonController
 //            'menuData' => DocumentCategory::where('active', 1)->get(),
             'documentCateGroup' => $this->getSumDocumentByCate(),
             'documentSumGroup' => $this->getSumDocumentByCateGroup(),
+            'pictureLib' => PictureLibrary::orderBy('created_at', 'desc')->take(10)->get(),
         );
 //        dd($layoutData);
         return view('index', $layoutData);
@@ -31,6 +33,7 @@ class IndexController extends CommonController
             'menuData' => DocumentCategory::where('active', 1)->get(),
             'documentCateGroup' => $this->getSumDocumentByCate(),
             'documentSumGroup' => $this->getSumDocumentByCateGroup(),
+            'pictureLib' => PictureLibrary::orderBy('created_at', 'desc')->take(10)->get(),
         );
 //        dd($layoutData);
         return view('admin.admin', $layoutData);

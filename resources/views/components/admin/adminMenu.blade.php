@@ -76,7 +76,7 @@
                 @foreach( $menuData as $menu)
                     <div class="slide-navigation-wrap" data-accordion>
                         <div class="nav-item has-sub" >
-                            <a href="{{ url('document/'.$menu->id) }}">
+                            <a href="{{ url('admin/document/'.$menu->id) }}">
                                 <span class="menu-icon-wrap icon ti-folder"></span>
                                 <span class="menu-title">{{ $menu->cate_name }}</span>
                             </a>
@@ -84,26 +84,6 @@
                     </div>
                 @endforeach
             @endif
-            {{--<div class="slide-navigation-wrap" data-accordion>--}}
-                {{--<div class="nav-item has-sub" data-control>--}}
-                    {{--<a href="#">--}}
-                        {{--<span class="menu-icon-wrap icon ti-folder"></span>--}}
-                        {{--<span class="menu-title">Tài Liệu</span>--}}
-                    {{--</a>--}}
-                {{--</div>--}}
-                {{--@if(isset($documentCate))--}}
-                {{--<div class="menu-content" data-content>--}}
-                    {{--@foreach($documentCate as $cate)--}}
-                    {{--<div class="nav-item">--}}
-                        {{--<a href="{{ url('document/'.$cate->category->id) }}">--}}
-                            {{--<span class="menu-icon-wrap bullet"></span>--}}
-                            {{--<span class="menu-title">{{ $cate->category->cate_name }}</span>--}}
-                        {{--</a>--}}
-                    {{--</div>--}}
-                    {{--@endforeach--}}
-                {{--</div>--}}
-                {{--@endif--}}
-            {{--</div>--}}
             <div class="slide-navigation-wrap" data-accordion>
                 <div class="nav-item has-sub" >
                     <a href="{{ url('') }}">

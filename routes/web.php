@@ -42,16 +42,25 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin/updateUser', 'UserController@updateUserInfo');
     Route::post('/admin/updateUser', 'UserController@updateUserInfo');
 
-    Route::get('/document/{id}', 'DocumentController@getDocumentGroup');
-
     Route::get('/download-document/{id}', 'DocumentController@downloadFile');
 
     Route::get('/admin/document-manager', 'DocumentController@getDocumentManagerList');
+
+    Route::get('/admin/document/{id}', 'DocumentController@getDocumentGroupAdmin');
 });
 //user route
 Route::middleware(['auth'])->group(function (){
     Route::get('/uploadDocument', 'DocumentController@uploadDocument');
     Route::post('/uploadDocument', 'DocumentController@uploadDocument');
+    Route::get('/document/{id}', 'DocumentController@getDocumentGroup');
+
+    Route::get('/my-file', 'DocumentController@myFile');
+
+    Route::get('/deleteMyFile', 'DocumentController@deleteMyFile');
+    Route::post('/deleteMyFile', 'DocumentController@deleteMyFile');
+
+    Route::get('/picture-library', 'PictureController@getPictureList');
+    Route::get('/picture-gallery/{id}', 'PictureController@getPictureGallery');
 });
 
 Auth::routes();

@@ -55,6 +55,12 @@
                                             <h5>Tài Khoản</h5>
                                         </div>
                                     </a>
+                                    <a href="{{ url('my-file') }}">
+                                        <i class="notification-icon fa fa-files-o info-bg"></i>
+                                        <div class="notification-details mt-3">
+                                            <h5>Tài Liệu Của Tôi</h5>
+                                        </div>
+                                    </a>
                                     <a href="{{ url('login') }}" id="login">
                                         <i class="notification-icon fa fa-sign-in primary-bg"></i>
                                         <div class="notification-details mt-3">

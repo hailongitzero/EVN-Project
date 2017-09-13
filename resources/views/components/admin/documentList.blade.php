@@ -11,22 +11,20 @@
             <div class="row">
                 <div class="col-md-9">
                     <div class="page-title-block">
-                        @if(isset($documentCate->category))
-                            <h4>{{ $documentCate->category->cate_name }}</h4>
+                        @if(isset($documentCate))
+                            <h4>{{ $documentCate->cate_name }}</h4>
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href=""><i class="ti-home"></i></a></li>
                                 <li class="breadcrumb-item"><a href="admin">Tài Liệu</a></li>
-                                <li class="breadcrumb-item active">{{ $documentCate->category->cate_name }}</li>
+                                <li class="breadcrumb-item active">{{ $documentCate->cate_name }}</li>
                             </ol>
                         @endif
                     </div>
                 </div>
                 <div class="col-md-3 page-title-block top-add-icon">
-                    @if($documentCate->upload_auth == 1)
                     <a href="#" class="btn btn-rounded btn-cyan" data-toggle="modal" data-target="#addDocumentModal">
                         <i class="fa fa-upload edit-icon"></i>
                     </a>
-                    @endif
                 </div>
             </div>
             <div class="row">
@@ -38,12 +36,12 @@
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <div class="panel-title">
-                                    @if(isset($documentCate->category))
-                                            <h4>{{ $documentCate->category->cate_name }}</h4>
+                                    @if(isset($documentCate))
+                                            <h4>{{ $documentCate->cate_name }}</h4>
                                     @endif
                                 </div>
                             </div>
-                            @if(isset($documentCate->category) && $documentCate->category->id == 1)
+                            @if(isset($documentCate) && ($documentCate->id == 1))
                             <div class="panel-body">
                                 <div class="basic-datatable-block">
                                     <table id="docCateTable" class="display table table-bordered basic-data-table">
@@ -68,7 +66,7 @@
                                                     <td class="controller-column">
                                                         @if($doc->doc_tp == 'docx' || $doc->doc_tp == 'doc')
                                                             <i class="fa fa-file-word-o edit-icon"></i>
-                                                        @elseif($doc->doc_tp == 'xslx' || $doc->doc_tp == 'xsl')
+                                                        @elseif($doc->doc_tp == 'xlsx' || $doc->doc_tp == 'xls')
                                                             <i class="fa fa-file-excel-o edit-icon"></i>
                                                         @elseif($doc->doc_tp == 'ppt' || $doc->doc_tp == 'pptx')
                                                             <i class="fa fa-file-powerpoint-o edit-icon"></i>
@@ -94,7 +92,7 @@
                                     </table>
                                 </div><!-- basic-table-block -->
                             </div><!--panel Body -->
-                            @elseif(isset($documentCate->category) && ($documentCate->category->id == 5 || $documentCate->category->id == 6 || $documentCate->category->id == 7))
+                            @elseif(isset($documentCate) && ($documentCate->id == 5 || $documentCate->id == 6 || $documentCate->id == 7))
                                 <div class="panel-body">
                                     <div class="basic-datatable-block">
                                         <table id="docCateTable" class="display table table-bordered basic-data-table">
@@ -121,7 +119,7 @@
                                                         <td class="controller-column">
                                                             @if($doc->doc_tp == 'docx' || $doc->doc_tp == 'doc')
                                                                 <i class="fa fa-file-word-o edit-icon"></i>
-                                                            @elseif($doc->doc_tp == 'xslx' || $doc->doc_tp == 'xsl')
+                                                            @elseif($doc->doc_tp == 'xlsx' || $doc->doc_tp == 'xls')
                                                                 <i class="fa fa-file-excel-o edit-icon"></i>
                                                             @elseif($doc->doc_tp == 'ppt' || $doc->doc_tp == 'pptx')
                                                                 <i class="fa fa-file-powerpoint-o edit-icon"></i>
@@ -170,7 +168,7 @@
                                                         <td class="controller-column">
                                                             @if($doc->doc_tp == 'docx' || $doc->doc_tp == 'doc')
                                                                 <i class="fa fa-file-word-o edit-icon"></i>
-                                                            @elseif($doc->doc_tp == 'xslx' || $doc->doc_tp == 'xsl')
+                                                            @elseif($doc->doc_tp == 'xlsx' || $doc->doc_tp == 'xls')
                                                                 <i class="fa fa-file-excel-o edit-icon"></i>
                                                             @elseif($doc->doc_tp == 'ppt' || $doc->doc_tp == 'pptx')
                                                                 <i class="fa fa-file-powerpoint-o edit-icon"></i>
@@ -217,8 +215,8 @@
                                     <div class="form-group row">
                                         <div class="col-md-9">
                                             <input type="text" class="form-control" id="inpDocName" name="inpDocName" placeholder="Tên Tài Liệu">
-                                            @if(isset($documentCate->category))
-                                                <input type="hidden" id="inpDocCateId" value="{{ $documentCate->category->id }}">
+                                            @if(isset($documentCate))
+                                                <input type="hidden" id="inpDocCateId" value="{{ $documentCate->id }}">
                                             @else
                                                 <input type="hidden" id="inpDocCateId" value="0">
                                             @endif
@@ -280,7 +278,7 @@
                     </div>
                 </div>
             </div>
-            <footer class="footer">
+            <div class="footer">
                 <div class="col-sm-12">
                     <div class="footer-divider">
 
@@ -304,7 +302,7 @@
                         </div>
                     </div>
                 </div>
-            </footer>
+            </div>
         </div>
     </div>
 </div>

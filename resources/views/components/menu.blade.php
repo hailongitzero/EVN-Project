@@ -149,7 +149,7 @@
             @endif
             <div class="slide-navigation-wrap" data-accordion>
                 <div class="nav-item has-sub" >
-                    <a href="{{ url('') }}">
+                    <a href="{{ url('searching') }}">
                         <span class="menu-icon-wrap icon ti-search"></span>
                         <span class="menu-title">Tra Cứu</span>
                     </a>
@@ -157,7 +157,7 @@
             </div>
             <div class="slide-navigation-wrap" data-accordion>
                 <div class="nav-item has-sub" >
-                    <a href="{{ url('') }}">
+                    <a href="{{ url('picture-library') }}">
                         <span class="menu-icon-wrap icon ti-image"></span>
                         <span class="menu-title">Thư Viện Ảnh</span>
                     </a>

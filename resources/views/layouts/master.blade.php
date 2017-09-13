@@ -33,6 +33,8 @@
     <link rel="stylesheet" href="/resources/assets/css/emoji.css">
     <link rel="stylesheet" href="/resources/assets/css/fullcalendar.min.css">
     <link rel="stylesheet" href="/resources/assets/css/lobipanel.min.css">
+    <link rel="stylesheet" href="/resources/assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="/resources/assets/css/flexslider.css">
 
     <!-- Material Design CSS -->
     <link rel="stylesheet" href="/resources/assets/css/bootstrap-material-design.min.css">
@@ -75,7 +77,7 @@
     <meta name="msapplication-TileImage" content="/resources/assets/images/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 </head>
-<body class="menu-collapsed">
+<body class="menu-expanded">
 <!-- Web content -->
 
 <!-- ! page content section-->
@@ -103,6 +105,8 @@
 <script src="/resources/assets/js/fullcalendar/fullcalendar.min.js"></script>
 <script src="/resources/assets/js/jquery-ui.min.js"></script>
 <script src="/resources/assets/js/lobipanel.min.js"></script>
+<script type="text/javascript" src="/resources/assets/js/owl.carousel.js"></script>
+<script type="text/javascript" src="/resources/assets/js/jquery.flexslider.js"></script>
 
 <script src="/resources/assets/js/jquery.steps.min.js"></script>
 <script src="/resources/assets/js/jquery.validate.min.js"></script>

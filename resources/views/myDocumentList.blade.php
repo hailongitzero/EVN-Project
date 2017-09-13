@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: HaiLong
- * Date: 9/7/2017
- * Time: 10:15 PM
+ * Date: 9/13/2017
+ * Time: 12:38 PM
  */?>
 <!--extends master template-->
 @extends('layouts.master')
@@ -32,9 +32,9 @@
     @include('components.menu', $menuData)
 
     @if(isset($layoutData))
-        @include('components.documentList', $layoutData)
+        @include('components.myDocumentList', $layoutData)
     @else
-        @include('components.documentList')
+        @include('components.myDocumentList')
     @endif
 @endsection
 <!--end content site section-->

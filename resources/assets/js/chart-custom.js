@@ -93,13 +93,18 @@ jQuery(document).ready(function () {
             borderColor: window.chartColors.info_clr_brdr,
             borderWidth: 2,
             data: [
-			randomScalingFactor(),
-			randomScalingFactor(),
-			randomScalingFactor(),
-			randomScalingFactor(),
-			randomScalingFactor(),
-			randomScalingFactor(),
-			randomScalingFactor()
+                20,
+                50,
+                60,
+                100,
+                80,
+			// randomScalingFactor(),
+			// randomScalingFactor(),
+			// randomScalingFactor(),
+			// randomScalingFactor(),
+			// randomScalingFactor(),
+			// randomScalingFactor(),
+			// randomScalingFactor()
 		]
 	}, {
             label: 'Second dataset',
@@ -107,13 +112,18 @@ jQuery(document).ready(function () {
             borderColor: window.chartColors.info_two_clr_brdr,
             borderWidth: 2,
             data: [
-			randomScalingFactor(),
-			randomScalingFactor(),
-			randomScalingFactor(),
-			randomScalingFactor(),
-			randomScalingFactor(),
-			randomScalingFactor(),
-			randomScalingFactor()
+                40,
+                50,
+                20,
+                100,
+                70,
+			// randomScalingFactor(),
+			// randomScalingFactor(),
+			// randomScalingFactor(),
+			// randomScalingFactor(),
+			// randomScalingFactor(),
+			// randomScalingFactor(),
+			// randomScalingFactor()
 		]
 	}]
 
@@ -373,7 +383,7 @@ jQuery(document).ready(function () {
 
                     title: {
                         display: false
-                    }
+                    },
                 }
             });
         }

@@ -323,4 +323,55 @@ jQuery(document).ready(function () {
 
         return false
     });
+
+    $('.myFileDelete').on('click', function () {
+        var data = new FormData();
+        data.append('_token', $('meta[name="csrf-token"]').attr('content'));
+        data.append('header', $('meta[name="csrf-token"]').attr('content'));
+        data.append('docId', $(this).find('#deleteFileId').val())
+        var cfm = confirm('Bạn chắc chắn muốn xóa file này?');
+        if (cfm ==true ){
+            $.ajax({
+                type: 'POST',
+                url: '/deleteMyFile',
+                data: data,
+                processData: false,  // tell jQuery not to process the data
+                contentType: false,  // tell jQuery not to set contentType
+                dataType: 'json',
+                success: function (response) {
+                    alert(response.Content);
+                },
+                error: function (response) {
+                    alert("Lỗi hệ thống, vui lòng thử lại.");
+                }
+            });
+
+            return false;
+        }
+    });
+
+//    image gallery
+    flexslider_init();
 });
+
+// flexslider init
+function flexslider_init() {
+
+    $('#flex-carousel').flexslider({
+        animation: "slide",
+        controlNav: false,
+        animationLoop: false,
+        slideshow: false,
+        itemWidth: 130,
+        itemMargin: 5,
+        asNavFor: '#flex-slider'
+    });
+
+    $('#flex-slider').flexslider({
+        animation: "slide",
+        controlNav: false,
+        animationLoop: false,
+        slideshow: false,
+        sync: "#flex-carousel"
+    });
+}

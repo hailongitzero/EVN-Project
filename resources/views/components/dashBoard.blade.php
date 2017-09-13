@@ -37,7 +37,7 @@
                                     @if(isset($documentCateGroup))
                                         @foreach($documentCateGroup as $docCate)
                                             @if($docCate->cate_group == 1)
-                                                <span class="a-meta-title"><a href="">{{ $docCate->cate_name }}</a> - ({{ isset($docCate->doc_count) ? $docCate->doc_count : 0 }})</span>
+                                                <span class="a-meta-title"><a href="">{{ $docCate->cate_name }}</a> <span class="doc-count">{{ isset($docCate->doc_count) ? $docCate->doc_count : 0 }}</span></span>
                                             @endif
                                         @endforeach
                                     @endif
@@ -64,7 +64,7 @@
                                     @if(isset($documentCateGroup))
                                         @foreach($documentCateGroup as $docCate)
                                             @if($docCate->cate_group == 2)
-                                                <span class="a-meta-title"><a href="">{{ $docCate->cate_name }}</a> - ({{ isset($docCate->doc_count) ? $docCate->doc_count : 0 }})</span>
+                                                <span class="a-meta-title"><a href="">{{ $docCate->cate_name }}</a> <span class="doc-count">{{ isset($docCate->doc_count) ? $docCate->doc_count : 0 }}</span></span>
                                             @endif
                                         @endforeach
                                     @endif
@@ -91,7 +91,7 @@
                                     @if(isset($documentCateGroup))
                                         @foreach($documentCateGroup as $docCate)
                                             @if($docCate->cate_group == 3)
-                                                <span class="a-meta-title"><a href="">{{ $docCate->cate_name }}</a> - ({{ isset($docCate->doc_count) ? $docCate->doc_count : 0 }})</span>
+                                                <span class="a-meta-title"><a href="">{{ $docCate->cate_name }}</a> <span class="doc-count">{{ isset($docCate->doc_count) ? $docCate->doc_count : 0 }}</span></span>
                                             @endif
                                         @endforeach
                                     @endif
@@ -118,7 +118,7 @@
                                     @if(isset($documentCateGroup))
                                         @foreach($documentCateGroup as $docCate)
                                             @if($docCate->cate_group == 4)
-                                                <span class="a-meta-title"><a href="">{{ $docCate->cate_name }}</a> - ({{ isset($docCate->doc_count) ? $docCate->doc_count : 0 }})</span>
+                                                <span class="a-meta-title"><a href="">{{ $docCate->cate_name }}</a> <span class="doc-count">{{ isset($docCate->doc_count) ? $docCate->doc_count : 0 }}</span></span>
                                             @endif
                                         @endforeach
                                     @endif
@@ -130,44 +130,6 @@
                 </div>
             </div><!-- nmbr-statistic-area -->
             <div class="dashBoard-section-2">
-                <div class="row">
-                    <div class="col-lg-5">
-                        <div class="box-widget widget-module">
-                            <div class="widget-body">
-                                <div id="canvas-holder1" style="width:100%;">
-                                    <canvas id="line_chart"></canvas>
-                                </div>
-                            </div>
-                        </div><!-- widget-module -->
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="box-widget">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <div class="panel-title">
-                                        <h4>Top Upload</h4>
-                                    </div>
-                                </div>
-                                <div class="panel-body">
-                                    <div id="container" style="width: 100%;">
-                                        <canvas id="bar_chart"></canvas>
-                                    </div>
-                                </div><!--panel Body -->
-                            </div><!--panel -->
-                        </div><!-- widget-module -->
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="box-widget widget-module dasboard-doghunt-chart">
-                            <div class="widget-body">
-                                <div id="canvas-holder" style="width:100%">
-                                    <canvas id="doghunt_chart_2"></canvas>
-                                </div>
-                            </div>
-                        </div><!-- widget-module -->
-                    </div>
-                </div>
-            </div><!-- chart-area -->
-            <div class="dashBoard-section-3">
                 <div class="row">
                     <div class="col-lg-6 col-sm-12">
                         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -195,66 +157,98 @@
                     <div class="col-lg-6 col-sm-12">
                         <div class="row">
                         <div class="col-md-6 col-sm-12">
-                            <div class="card" style="width: 100%">
-                                <img class="card-img-top" src="/resources/assets/images/news/autum.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h4 class="card-title">Card title</h4>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-12">
-                            <div class="tab-one tab-common">
-                                <!-- Nav tabs -->
-                                <ul class="nav nav-tabs md-pills pills-ins" role="tablist">
-                                    <li class="nav-item">
-                                        <a class="btn btn-raised btn-primary waves-effect waves-light active" data-toggle="tab" href="#panel" role="tab">Tin Tức</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="btn btn-raised btn-primary waves-effect waves-light" data-toggle="tab" href="#pane2" role="tab">Thông Báo</a>
-                                    </li>
-                                </ul>
-                                <!-- Tab panels -->
-                                <div class="tab-content">
-                                    <!--Panel 1-->
-                                    <div class="tab-pane fade in show active" id="panel" role="tabpanel">
-                                        <div class="news">
-                                            <a href="#" class="new-item">Lorem ipsum dolor sit amet, arcu quam ut maecenas purus</a>
-                                            <a href="#" class="new-item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
-                                            <a href="#" class="new-item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
-                                            <a href="#" class="new-item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                            <div class="box-widget">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <div class="panel-title">
+                                            <h4>Hình Ảnh</h4>
                                         </div>
                                     </div>
-                                    <!--/.Panel 1-->
-
-                                    <!--Panel 2-->
-                                    <div class="tab-pane fade" id="pane2" role="tabpanel">
-                                        <h5>Many software publishing and web app</h5>
-                                        <p>
-                                            It is a long established fact that a reader will be
-                                            distracted by the readable content of a page when
-                                            looking at its layout. The point of using Lorem
-                                            Ipsum is that it has a more-or-less normal distribution.
-                                        </p>
-                                        <p>
-                                            of letters, as opposed to using 'Content here,
-                                            content here', making it look like readable
-                                            English. Many desktop publishing packages and
-                                            web page editors now use Lorem Ipsum as their
-                                            default model text, and a search for
-                                            'lorem ipsum' will uncover
-                                        </p>
+                                    <div class="panel-body">
+                                        <div id="container" style="width: 100%;">
+                                            <div class="news">
+                                                @if(isset($pictureLib))
+                                                    @foreach($pictureLib as $pic)
+                                                        <a href="{{ url('picture/'.$pic->id) }}" class="new-item">{{ $pic->name }}</a>
+                                                    @endforeach
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div><!--panel Body -->
+                                </div><!--panel -->
+                            </div><!-- widget-module -->
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="box-widget">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <div class="panel-title">
+                                            <h4>Bài Mới</h4>
+                                        </div>
                                     </div>
-                                    <!--/.Panel 2-->
-                                </div>
-                            </div>
+                                    <div class="panel-body">
+                                        <div id="container" style="width: 100%;">
+                                            <div class="news">
+                                                <a href="#" class="new-item">Tờ Trình 1</a>
+                                                <a href="#" class="new-item">Tờ Trình 2</a>
+                                                <a href="#" class="new-item">Tờ Trình 3</a>
+                                                <a href="#" class="new-item">Tờ Trình 4</a>
+                                            </div>
+                                        </div>
+                                    </div><!--panel Body -->
+                                </div><!--panel -->
+                            </div><!-- widget-module -->
                         </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="footer">
+            <div class="dashBoard-section-3 mt-3">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="box-widget">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="panel-title">
+                                        <h4>Top Upload</h4>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    <div id="container" style="width: 100%;">
+                                        <canvas id="line_chart"></canvas>
+                                    </div>
+                                </div><!--panel Body -->
+                            </div><!--panel -->
+                        </div><!-- widget-module -->
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="box-widget">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="panel-title">
+                                        <h4>Top Upload</h4>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    <div id="container" style="width: 100%;">
+                                        <canvas id="bar_chart"></canvas>
+                                    </div>
+                                </div><!--panel Body -->
+                            </div><!--panel -->
+                        </div><!-- widget-module -->
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="box-widget widget-module dasboard-doghunt-chart">
+                            <div class="widget-body">
+                                <div id="canvas-holder" style="width:100%">
+                                    <canvas id="pie_chart"></canvas>
+                                </div>
+                            </div>
+                        </div><!-- widget-module -->
+                    </div>
+                </div>
+            </div><!-- chart-area -->
+            <footer class="footer">
                 <div class="col-sm-12">
                     <div class="footer-divider">
 
@@ -278,7 +272,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </footer>
         </div>
     </div><!-- page-content -->
 </div><!-- page-container -->
