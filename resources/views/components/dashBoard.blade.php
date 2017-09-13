@@ -169,7 +169,7 @@
                                             <div class="news">
                                                 @if(isset($pictureLib))
                                                     @foreach($pictureLib as $pic)
-                                                        <a href="{{ url('picture/'.$pic->id) }}" class="new-item">{{ $pic->name }}</a>
+                                                        <a href="{{ url('picture-gallery/'.$pic->id) }}" class="new-item">{{ $pic->name }}</a>
                                                     @endforeach
                                                 @endif
                                             </div>
