@@ -36,5 +36,7 @@
     @else
         @include('components.myDocumentList')
     @endif
+    <!-- footer page-->
+    @include('components.footer')
 @endsection
 <!--end content site section-->

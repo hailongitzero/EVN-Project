@@ -387,6 +387,20 @@ jQuery(document).ready(function () {
                 }
             });
         }
+        if ($('#bar_chart1').length > 0) {
+            var ctx1 = $("#bar_chart1")[0].getContext("2d");
+            window.myBar = new Chart(ctx1, {
+                type: 'bar',
+                data: barChartData,
+                options: {
+                    responsive: true,
+
+                    title: {
+                        display: false
+                    },
+                }
+            });
+        }
         if ($("#plar_chart").length > 0) {
             var ctx3 = $("#plar_chart");
             window.myPolarArea = Chart.PolarArea(ctx3, polarChart);

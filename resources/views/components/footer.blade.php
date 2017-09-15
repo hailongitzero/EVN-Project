@@ -5,8 +5,28 @@
  * Date: 9/5/2017
  * Time: 3:05 PM
  */?>
-<div class="col-sm-12">
-    <div class="footer">
-        <p>© 2017 AxilBoard by <a href="data-table.html#">codepassenger</a></p>
+<footer class="footer">
+    <div class="col-sm-12">
+        <div class="footer-divider">
+
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <i class="fa fa-map-marker edit-icon"></i>
+                <span>332 Độc Lập (QL51), TT Phú Mỹ, Tân Thành, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam</span>
+            </div>
+            <div class="col-md-3">
+                <i class="fa fa-phone edit-icon"></i>
+                <span>(84-254) 392 4436</span>
+            </div>
+            <div class="col-md-3">
+                <i class="fa fa-fax edit-icon"></i>
+                <span>(84-254) 392 4437</span>
+            </div>
+            <div class="col-md-3">
+                <i class="fa fa-envelope-o edit-icon"></i>
+                <span>eps@genco3.evn.vn</span>
+            </div>
+        </div>
     </div>
-</div>
+</footer>

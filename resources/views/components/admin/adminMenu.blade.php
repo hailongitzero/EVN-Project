@@ -7,11 +7,11 @@
  */?>
 <div class="slide-menu-wrap">
     <nav id="cbp-spmenu-s1" class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left">
-        <div class="menu-button">
-            <a id="showLeftPush" href="javascript:void(0)" class="toggolebtn">
-                <span class="ti-view-grid"></span>
-            </a>
-        </div>
+        {{--<div class="menu-button">--}}
+            {{--<a id="showLeftPush" href="javascript:void(0)" class="toggolebtn">--}}
+                {{--<span class="ti-view-grid"></span>--}}
+            {{--</a>--}}
+        {{--</div>--}}
         <div class="user-profile-block">
             <div class="user-thumb">
                 <img src="/resources/assets/images/profile/user-thumb.jpg" alt="img" class="img-responsive">

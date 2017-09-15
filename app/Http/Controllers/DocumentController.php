@@ -263,4 +263,22 @@ class DocumentController extends CommonController
             }
         }
     }
+
+    public function searchFile(){
+        if (Auth::check()) {
+            $userId = Auth::user()->id;
+            $documentList = Document::where('upload_user_id', $userId)->where('active', 1)->get();
+//            $documentCate = UserDocumentCategory::with('category')->where('user_id', $userId)->where('doc_cate_id', $docId)->first();
+            $userData = $this->userInfoData();
+            $layoutData = array(
+                'userData' => $userData,
+//            'menuData' => $this->userMenuData(),//data for menu
+                'menuData' => DocumentCategory::where('active', 1)->get(),
+                'documentList' => $documentList,
+//                'documentCate' => $documentCate,
+            );
+//        dd($layoutData);
+            return view('searchFile', $layoutData);
+        }
+    }
 }

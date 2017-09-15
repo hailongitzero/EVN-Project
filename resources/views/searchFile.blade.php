@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: HaiLong
- * Date: 9/4/2017
- * Time: 1:17 PM
+ * Date: 9/15/2017
+ * Time: 2:17 AM
  */?>
 <!--extends master template-->
 @extends('layouts.master')
@@ -29,12 +29,12 @@
         @include('components.header')
     @endif
     <!-- menu page-->
-    @include('components.admin.adminMenu', $menuData)
+    @include('components.menu', $menuData)
 
     @if(isset($layoutData))
-        @include('components.dashBoard')
+        @include('components.searchFile', $layoutData)
     @else
-        @include('components.dashBoard')
+        @include('components.searchFile')
     @endif
     <!-- footer page-->
     @include('components.footer')

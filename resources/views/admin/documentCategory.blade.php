@@ -36,6 +36,8 @@
     @else
         @include('components.admin.documentCategory')
     @endif
+    <!-- footer page-->
+    @include('components.footer')
 @endsection
 <!--end content site section-->
 

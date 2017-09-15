@@ -28,21 +28,17 @@
                 </div>
             </div>
             <div class="row">
-
-            </div>
-            <div class="row">
                 <div class="col-md-12">
-                    <div class="box-widget widget-module">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <div class="panel-title">
+                    <div class="box-data">
+                            <div class="box-heading">
+                                <div class="box-title">
                                     @if(isset($documentCate))
                                             <h4>{{ $documentCate->cate_name }}</h4>
                                     @endif
                                 </div>
                             </div>
                             @if(isset($documentCate) && ($documentCate->id == 1))
-                            <div class="panel-body">
+                                <div class="box-body">
                                 <div class="basic-datatable-block">
                                     <table id="docCateTable" class="display table table-bordered basic-data-table">
                                         <thead>
@@ -93,7 +89,7 @@
                                 </div><!-- basic-table-block -->
                             </div><!--panel Body -->
                             @elseif(isset($documentCate) && ($documentCate->id == 5 || $documentCate->id == 6 || $documentCate->id == 7))
-                                <div class="panel-body">
+                                <div class="box-body">
                                     <div class="basic-datatable-block">
                                         <table id="docCateTable" class="display table table-bordered basic-data-table">
                                             <thead>
@@ -146,7 +142,7 @@
                                     </div><!-- basic-table-block -->
                                 </div><!--panel Body -->
                             @else
-                                <div class="panel-body">
+                                <div class="box-body">
                                     <div class="basic-datatable-block">
                                         <table id="docCateTable" class="display table table-bordered basic-data-table">
                                             <thead>
@@ -194,8 +190,7 @@
                                         </table>
                                     </div><!-- basic-table-block -->
                                 </div><!--panel Body -->
-                                @endif
-                        </div><!--panel -->
+                            @endif
                     </div><!-- widget-module -->
                 </div>
             </div>
@@ -274,31 +269,6 @@
                                     </div>
                                 </form>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="footer">
-                <div class="col-sm-12">
-                    <div class="footer-divider">
-
-                    </div>
-                    <div class="row">
-                        <div class="col-md-3">
-                            <i class="fa fa-map-marker edit-icon"></i>
-                            <span>332 Độc Lập (QL51), TT Phú Mỹ, Tân Thành, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam</span>
-                        </div>
-                        <div class="col-md-3">
-                            <i class="fa fa-phone edit-icon"></i>
-                            <span>(84-254) 392 4436</span>
-                        </div>
-                        <div class="col-md-3">
-                            <i class="fa fa-fax edit-icon"></i>
-                            <span>(84-254) 392 4437</span>
-                        </div>
-                        <div class="col-md-3">
-                            <i class="fa fa-envelope-o edit-icon"></i>
-                            <span>eps@genco3.evn.vn</span>
                         </div>
                     </div>
                 </div>

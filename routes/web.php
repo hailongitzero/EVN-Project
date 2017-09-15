@@ -61,6 +61,8 @@ Route::middleware(['auth'])->group(function (){
 
     Route::get('/picture-library', 'PictureController@getPictureList');
     Route::get('/picture-gallery/{id}', 'PictureController@getPictureGallery');
+
+    Route::get('/searching', 'DocumentController@searchFile');
 });
 
 Auth::routes();

@@ -36,5 +36,6 @@
     @else
         @include('components.dashBoard')
     @endif
+    @include('components.footer')
 @endsection
 <!--end content site section-->

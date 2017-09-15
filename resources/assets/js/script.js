@@ -312,6 +312,7 @@ jQuery(document).ready(function () {
                 dataType: 'json',
                 success: function (response) {
                     alert(response.Content);
+                    location.reload();
                 },
                 error: function (response) {
                     alert("Lỗi hệ thống, vui lòng thử lại.");
@@ -340,6 +341,7 @@ jQuery(document).ready(function () {
                 dataType: 'json',
                 success: function (response) {
                     alert(response.Content);
+                    location.reload();
                 },
                 error: function (response) {
                     alert("Lỗi hệ thống, vui lòng thử lại.");
