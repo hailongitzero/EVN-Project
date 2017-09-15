@@ -208,7 +208,7 @@ class DocumentController extends CommonController
                 if (isset($totalTime)){
                     $fileData->total_time = $totalTime;
                 }
-                if (isset($fromDate) || !is_null($fromDate) || !empty($fromDate) || !strlen($fromDate) < 1){
+                if (isset($fromDate) || !is_null($fromDate) || !empty($fromDate) || !strlen($fromDate) > 1){
                     $fileData->start_date = date('Y-m-d', strtotime($fromDate));
                 }
                 if (isset($toDate) || !is_null($toDate) || !empty($toDate) || !strlen($toDate) < 1 ){
@@ -264,7 +264,7 @@ class DocumentController extends CommonController
         }
     }
 
-    public function searchFile(){
+    public function showSearchFile(){
         if (Auth::check()) {
             $userId = Auth::user()->id;
             $documentList = Document::where('upload_user_id', $userId)->where('active', 1)->get();
@@ -279,6 +279,42 @@ class DocumentController extends CommonController
 //                'documentCate' => $documentCate,
             );
 //        dd($layoutData);
+            return view('searchFile', $layoutData);
+        }
+    }
+
+    public function searchFile(Request $request){
+        if (Auth::check()) {
+            $userId = Auth::user()->id;
+            $sql = 'select *, user.name as author from document doc, users user WHERE 1 = 1 and doc.upload_user_id = user.id';
+            if (strlen($request->authName) > 1){
+                $sql .= " and doc.upload_user_id in (select id from users where name like  '". $request->authname ."%')";
+            }
+            if ($request->cateId == 0 || $request->cateId == '0'){
+                $sql .= " and doc.doc_cate_id IN (SELECT doc_cate_id from user_doc_cate WHERE user_id IN (SELECT id FROM users WHERE id = ".$userId."))";
+            }else{
+                $sql .= "and doc.doc_cate_id = ".$request->cateId;
+            }
+            if (strlen($request->docName) > 1){
+                $sql .= " and doc.doc_name LIKE '%".$request->docName."%'";
+            }
+
+            $sql .= " AND date(doc.created_at) BETWEEN date('".date('Y-m-d', strtotime($request->fromDate))."') AND date('".date('Y-m-d', strtotime($request->toDate))."')";
+//            dd($sql);
+            $searchResult = DB::select(DB::raw($sql));
+            $documentList = Document::where('upload_user_id', $userId)->where('active', 1)->get();
+//            $documentCate = UserDocumentCategory::with('category')->where('user_id', $userId)->where('doc_cate_id', $docId)->first();
+            $userData = $this->userInfoData();
+            $layoutData = array(
+                'userData' => $userData,
+                'menuData' => $this->userMenuData(),//data for menu
+//                'menuData' => DocumentCategory::where('active', 1)->get(),
+                'userCateList' => UserDocumentCategory::with('category')->where('user_id', $userId)->get(),
+                'documentList' => $documentList,
+//                'documentCate' => $documentCate,
+                'searchResult' => $searchResult,
+            );
+//            dd($layoutData);
             return view('searchFile', $layoutData);
         }
     }

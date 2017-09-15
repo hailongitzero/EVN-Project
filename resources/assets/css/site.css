@@ -12,6 +12,13 @@
 }
 .apps-logo-block{
     background: #fff !important;
+    width: 140px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+.banner-top{
+    width: auto;
+    height: 120px;
 }
 .menu-expanded .logo-text-img-block{
     display: inline-block;
@@ -332,6 +339,9 @@ table.dataTable thead .sorting_asc:after, table.dataTable thead .sorting_desc:af
     padding: 20px !important;
 }
 .search-layout input{
+    margin: 10px 0;
+}
+.search-layout .form-btn-block{
     margin: 10px 0;
 }
 .search-layout select{

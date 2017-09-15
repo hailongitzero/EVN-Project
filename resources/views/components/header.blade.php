@@ -13,7 +13,7 @@
 <div class="apps-header navbar">
     <div class="apps-logo-block">
         <a href="{{ url('') }}">
-            <img src="/resources/assets/images/logo-horizon.png" alt="img" class="img-responsive">
+            <img src="/resources/assets/images/logo-vertical.png" alt="img" class="img-responsive">
             {{--<div class="logo-text-block">--}}
 
                 {{--<h3 class="logo-text">EPS</h3>--}}
@@ -25,18 +25,18 @@
     </div>
     <div class="top-menu">
         <div class="row">
-            <div class="col-md-3">
-                <ul class="top-controller-icons pull-left">
-                    <li>
-                        <h4 style="color:#ff6a53">Thư Viện Điện Tử</h4>
+            {{--<div class="col-md-3">--}}
+                {{--<ul class="top-controller-icons pull-left">--}}
+                    {{--<li>--}}
+                        {{--<h4 style="color:#ff6a53">Thư Viện Điện Tử</h4>--}}
                         {{--<a id="showLeftPush" href="javascript:void(0)" class="toggolebtn">--}}
                             {{--<span class="ti-view-grid"></span>--}}
                         {{--</a>--}}
-                    </li>
-                </ul>
-            </div>
-            <div class="col-md-7">
-
+                    {{--</li>--}}
+                {{--</ul>--}}
+            {{--</div>--}}
+            <div class="col-md-10 text-center">
+                <img src="/resources/assets/images/banner_top.jpg" alt="" class="banner-top">
             </div>
             <div class="col-md-2">
                 <ul class="nav navbar-nav text-right">
