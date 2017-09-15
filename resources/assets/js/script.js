@@ -294,9 +294,15 @@ jQuery(document).ready(function () {
         data.append('cateId', formObject.find('#inpDocCateId').val());
         data.append('fileName', formObject.find('#inpDocName').val());
         data.append('file', ($("#inpFile"))[0].files[0]);
-        data.append('totalTime', formObject.find('#inpDocTime').val());
-        data.append('fromDate', formObject.find('#fromDate').val());
-        data.append('toDate', formObject.find('#toDate').val());
+        if (typeof(formObject.find('#inpDocTime').val()) != "undefined" && formObject.find('#inpDocTime').val() != null){
+            data.append('totalTime', formObject.find('#inpDocTime').val());
+        }
+        if (typeof(formObject.find('#fromDate').val()) != "undefined" && formObject.find('#fromDate').val() != null){
+            data.append('fromDate', formObject.find('#fromDate').val());
+        }
+        if (typeof(formObject.find('#toDate').val()) != "undefined" && formObject.find('#toDate').val() != null){
+            data.append('toDate', formObject.find('#toDate').val());
+        }
 
         if($('#inpFile').val() == ''){
             alert("Bạn chưa nhập file!");

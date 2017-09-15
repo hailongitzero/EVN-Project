@@ -161,8 +161,8 @@
                     <div class="col-lg-6 col-sm-12">
                         <div class="row">
                             <div class="col-md-6 col-sm-12">
-                                <div class="box-data dashboard-fix-box">
-                                    <div class="box-heading">
+                                <div class="box-data-1 dashboard-fix-box">
+                                    <div class="box-header cyan">
                                         <div class="box-title">
                                             <h4>Hình Ảnh</h4>
                                         </div>
@@ -181,8 +181,8 @@
                                 </div><!-- widget-module -->
                             </div>
                             <div class="col-md-6 col-sm-12">
-                                <div class="box-data dashboard-fix-box">
-                                    <div class="box-heading">
+                                <div class="box-data-1 dashboard-fix-box">
+                                    <div class="box-header cyan">
                                         <div class="box-title">
                                             <h4>Bài Mới</h4>
                                         </div>
@@ -206,8 +206,8 @@
             <div class="dashBoard-section-3">
                 <div class="row">
                     <div class="col-lg-4">
-                        <div class="box-data">
-                                <div class="box-heading">
+                        <div class="box-data-1">
+                                <div class="box-header cyan">
                                     <div class="box-title">
                                         <h4>Top Upload</h4>
                                     </div>
@@ -220,9 +220,9 @@
                         </div><!-- widget-module -->
                     </div>
                     <div class="col-lg-4">
-                        <div class="box-data">
-                            <div class="box-heading">
-                                <div class="panel-title">
+                        <div class="box-data-1">
+                            <div class="box-header cyan">
+                                <div class="box-title">
                                     <h4>Top Upload</h4>
                                 </div>
                             </div>
@@ -234,9 +234,9 @@
                         </div><!-- widget-module -->
                     </div>
                     <div class="col-lg-4">
-                        <div class="box-data">
-                            <div class="box-heading">
-                                <div class="panel-title">
+                        <div class="box-data-1">
+                            <div class="box-header cyan">
+                                <div class="box-title">
                                     <h4>Top Upload</h4>
                                 </div>
                             </div>

@@ -67,7 +67,7 @@ class DocumentController extends CommonController
     }
 
     /*
-     * function view document list by document category
+     * Hiển thị tất cả các tài liệu theo danh mục tài liệu
      */
     public function getDocumentGroup($docId){
         if (Auth::check()) {
@@ -208,10 +208,10 @@ class DocumentController extends CommonController
                 if (isset($totalTime)){
                     $fileData->total_time = $totalTime;
                 }
-                if (isset($fromDate)){
+                if (isset($fromDate) || !is_null($fromDate) || !empty($fromDate) || !strlen($fromDate) < 1){
                     $fileData->start_date = date('Y-m-d', strtotime($fromDate));
                 }
-                if (isset($toDate)){
+                if (isset($toDate) || !is_null($toDate) || !empty($toDate) || !strlen($toDate) < 1 ){
                     $fileData->end_date = date('Y-m-d', strtotime($toDate));
                 }
 
@@ -272,8 +272,9 @@ class DocumentController extends CommonController
             $userData = $this->userInfoData();
             $layoutData = array(
                 'userData' => $userData,
-//            'menuData' => $this->userMenuData(),//data for menu
-                'menuData' => DocumentCategory::where('active', 1)->get(),
+                'menuData' => $this->userMenuData(),//data for menu
+//                'menuData' => DocumentCategory::where('active', 1)->get(),
+                'userCateList' => UserDocumentCategory::with('category')->where('user_id', $userId)->get(),
                 'documentList' => $documentList,
 //                'documentCate' => $documentCate,
             );

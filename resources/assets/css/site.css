@@ -327,3 +327,29 @@ table.dataTable thead .sorting_asc:after, table.dataTable thead .sorting_desc:af
     padding-right: 10px;
     padding-left: 10px;
 }
+.search-layout{
+    background: #fff;
+    padding: 20px !important;
+}
+.search-layout input{
+    margin: 10px 0;
+}
+.search-layout select{
+    margin: 10px 0;
+    height: calc(2.75rem + 2px);
+}
+.box-data-1{
+    background: #fff;
+}
+.box-data-1 .box-header{
+    padding: 10px 30px;
+}
+.box-data-1 .box-header .box-title h4{
+    font-size: 18px;
+    font-weight: 400;
+    color: #111;
+    margin-bottom: 0;
+}
+.box-data-1 .box-body{
+    padding: 30px;
+}
