@@ -21,36 +21,42 @@
                         @endif
                     </div>
                 </div>
-                <div class="col-md-3 page-title-block top-add-icon">
-                    @if($documentCate->upload_auth == 1)
-                    <a href="#" class="btn btn-rounded btn-cyan" data-toggle="modal" data-target="#addDocumentModal">
-                        <i class="fa fa-upload edit-icon"></i>
-                    </a>
-                    @endif
-                </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
                     <div class="box-data">
                         <div class="box-heading">
                             <div class="box-title">
-                                @if(isset($documentCate->category))
-                                        <h4>{{ $documentCate->category->cate_name }}</h4>
-                                @endif
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        @if(isset($documentCate->category))
+                                            <h4>{{ $documentCate->category->cate_name }}</h4>
+                                        @endif
+                                    </div>
+                                    <div class="col-md-8 text-right">
+                                        <div class="page-title-block top-add-icon">
+                                            @if($documentCate->upload_auth == 1)
+                                                <a href="#" class="btn btn-rounded btn-cyan" data-toggle="modal" data-target="#addDocumentModal">
+                                                    <i class="fa fa-upload edit-icon"></i> Tải Lên
+                                                </a>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        @if(isset($documentCate->category) && $documentCate->category->id == 1)
+                        @if(isset($documentCate->category) && ($documentCate->category->id == 1 || $documentCate->category->id == 2))
                             <div class="box-body">
                                 <div class="basic-datatable-block">
                                     <table id="docCateTable" class="display table table-bordered basic-data-table">
                                         <thead>
                                         <tr>
                                             <th>Tên Tài Liệu</th>
-                                            <th>Thời Gian Hoàn Thành</th>
-                                            <th>Ngày Đăng</th>
-                                            <th>Người Đăng</th>
-                                            <th></th>
-                                            <th>Download</th>
+                                            <th width="12%">Thời Gian Hoàn Thành</th>
+                                            <th width="10%">Ngày Đăng</th>
+                                            <th width="10%">Người Đăng</th>
+                                            <th width="10%">Xem Trước</th>
+                                            <th width="10%">Tải Xuống</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -58,7 +64,7 @@
                                             @foreach($documentList as $doc)
                                                 <tr>
                                                     <td class="cateName">{{ $doc->doc_name }}</td>
-                                                    <td>{{ $doc->total_time }}</td>
+                                                    <td>{{ isset($doc->total_time) ? $doc->total_time.' ngày' : '' }}</td>
                                                     <td>{{ !is_null($doc->created_at) ? $doc->created_at->format('d-m-Y') : ''}}</td>
                                                     <td>{{ $doc->documentAuthor->name }}</td>
                                                     <td class="controller-column">
@@ -90,19 +96,19 @@
                                     </table>
                                 </div><!-- basic-table-block -->
                             </div><!--panel Body -->
-                        @elseif(isset($documentCate->category) && ($documentCate->category->id == 5 || $documentCate->category->id == 6 || $documentCate->category->id == 7))
+                        @elseif(isset($documentCate->category) && ($documentCate->category->id == 7 || $documentCate->category->id == 8 || $documentCate->category->id == 9))
                             <div class="box-body">
                                 <div class="basic-datatable-block">
                                     <table id="docCateTable" class="display table table-bordered basic-data-table">
                                         <thead>
                                         <tr>
                                             <th>Tên Tài Liệu</th>
-                                            <th>Từ Ngày</th>
-                                            <th>Đến Ngày</th>
-                                            <th>Ngày Đăng</th>
-                                            <th>Người Đăng</th>
-                                            <th></th>
-                                            <th>Download</th>
+                                            <th width="10%">Từ Ngày</th>
+                                            <th width="10%">Đến Ngày</th>
+                                            <th width="10%">Ngày Đăng</th>
+                                            <th width="10%">Người Đăng</th>
+                                            <th width="10%">Xem Trước</th>
+                                            <th width="10%">Tải Xuống</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -150,10 +156,10 @@
                                         <thead>
                                         <tr>
                                             <th>Tên Tài Liệu</th>
-                                            <th>Ngày Đăng</th>
-                                            <th>Người Đăng</th>
-                                            <th></th>
-                                            <th>Download</th>
+                                            <th width="10%">Ngày Đăng</th>
+                                            <th width="10%">Người Đăng</th>
+                                            <th width="10%">Xem Trước</th>
+                                            <th width="10%">Tải Xuống</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -204,7 +210,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Upload Tài Liệu</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Tải Tài Liệu Lên</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -213,7 +219,7 @@
                 <div class="form-block">
                     <form id="frmAddDoc" class="form-common" action="">
                         <div class="form-group row">
-                            <div class="col-md-9">
+                            <div class="col-md-12">
                                 <input type="text" class="form-control" id="inpDocName" name="inpDocName" placeholder="Tên Tài Liệu">
                                 @if(isset($documentCate->category))
                                     <input type="hidden" id="inpDocCateId" value="{{ $documentCate->category->id }}">
@@ -221,12 +227,14 @@
                                     <input type="hidden" id="inpDocCateId" value="0">
                                 @endif
                             </div>
-                            @if(isset($documentCate->category) && $documentCate->category->id == 1)
-                                <div class="col-md-3">
-                                    <input type="number" class="form-control" id="inpDocTime" name="inpDocTime" placeholder="Thời Gian Hoàn THành">
-                                </div>
-                            @endif
                         </div>
+                        @if(isset($documentCate->category) && $documentCate->category->id == 1)
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <input type="number" class="form-control" id="inpDocTime" name="inpDocTime" placeholder="Thời Gian Hoàn Thành">
+                                </div>
+                            </div>
+                        @endif
                         @if(isset($documentCate->category) && ($documentCate->category->id == 5 || $documentCate->category->id == 6 || $documentCate->category->id == 7 ))
                             <div class="form-group row">
                                 <div class="col-lg-6">
@@ -238,15 +246,15 @@
                             </div>
                         @endif
                         <div class="form-group">
-                            <label id="lblInpFile" for="inpFile" class="col-md-6 col-form-label left-align">Tài Liệu Upload</label>
+                            <label id="lblInpFile" for="inpFile" class="col-md-6 col-form-label left-align">Tài Liệu Tải Lên</label>
                             <div class="col-lg-6 btn btn-primary waves-effect waves-light">
-                                <span><i class="fa fa-cloud-upload" aria-hidden="true"></i> Browse file..</span>
-                                <input type="file" id="inpFile" accept="application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint,text/plain, application/pdf, image/*, video/*">
+                                <span><i class="fa fa-cloud-upload" aria-hidden="true"></i> Chọn Tài Liệu</span>
+                                <input type="file" id="inpFile" accept="model/vnd-dwf, image/vnd.dwg, application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint,text/plain, application/pdf">
                             </div>
                         </div>
                         <div class="form-btn-block">
-                            <button type="button" id="btnAddDoc" class="btn btn-raised btn-primary waves-effect waves-light">Upload</button>
-                            <button type="button" class="btn btn-outline-default btn-xs btn-raised waves-effect" data-dismiss="modal" aria-label="Close">Hủy</button>
+                            <button type="button" id="btnAddDoc" class="btn btn-raised btn-primary btn-rounded waves-effect waves-light">Tải Lên</button>
+                            <button type="button" class="btn btn-outline-default btn-xs btn-raised btn-rounded waves-effect" data-dismiss="modal" aria-label="Close">Hủy</button>
                         </div>
                     </form>
                 </div>

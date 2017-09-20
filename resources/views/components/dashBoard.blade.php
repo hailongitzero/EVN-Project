@@ -158,48 +158,44 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-sm-12">
-                        <div class="row">
-                            <div class="col-md-6 col-sm-12">
-                                <div class="box-data-1 dashboard-fix-box">
-                                    <div class="box-header cyan">
-                                        <div class="box-title">
-                                            <h4>Hình Ảnh</h4>
-                                        </div>
-                                    </div>
-                                    <div class="box-body">
-                                        <div id="container" style="width: 100%;">
-                                            <div class="news">
-                                                @if(isset($pictureLib))
-                                                    @foreach($pictureLib as $pic)
-                                                        <a href="{{ url('picture-gallery/'.$pic->id) }}" class="new-item">{{ $pic->name }}</a>
-                                                    @endforeach
-                                                @endif
-                                            </div>
-                                        </div>
-                                    </div><!--panel Body -->
-                                </div><!-- widget-module -->
+                    <div class="col-lg-3 col-sm-12">
+                        <div class="box-data-1 dashboard-fix-box">
+                            <div class="box-header cyan">
+                                <div class="box-title">
+                                    <h4>Hình Ảnh</h4>
+                                </div>
                             </div>
-                            <div class="col-md-6 col-sm-12">
-                                <div class="box-data-1 dashboard-fix-box">
-                                    <div class="box-header cyan">
-                                        <div class="box-title">
-                                            <h4>Bài Mới</h4>
-                                        </div>
+                            <div class="box-body">
+                                <div id="container" style="width: 100%;">
+                                    <div class="news">
+                                        @if(isset($pictureLib))
+                                            @foreach($pictureLib as $pic)
+                                                <a href="{{ url('picture-gallery/'.$pic->id) }}" class="new-item">{{ $pic->name }}</a>
+                                            @endforeach
+                                        @endif
                                     </div>
-                                    <div class="box-body">
-                                        <div id="container" style="width: 100%;">
-                                            <div class="news">
-                                                <a href="#" class="new-item">Tờ Trình 1</a>
-                                                <a href="#" class="new-item">Tờ Trình 2</a>
-                                                <a href="#" class="new-item">Tờ Trình 3</a>
-                                                <a href="#" class="new-item">Tờ Trình 4</a>
-                                            </div>
-                                        </div>
-                                    </div><!--panel Body -->
-                                </div><!-- widget-module -->
+                                </div>
+                            </div><!--panel Body -->
+                        </div><!-- widget-module -->
+                    </div>
+                    <div class="col-md-3 col-sm-12">
+                        <div class="box-data-1 dashboard-fix-box">
+                            <div class="box-header cyan">
+                                <div class="box-title">
+                                    <h4>Bài Mới</h4>
+                                </div>
                             </div>
-                        </div>
+                            <div class="box-body">
+                                <div id="container" style="width: 100%;">
+                                    <div class="news">
+                                        <a href="#" class="new-item">Tờ Trình 1</a>
+                                        <a href="#" class="new-item">Tờ Trình 2</a>
+                                        <a href="#" class="new-item">Tờ Trình 3</a>
+                                        <a href="#" class="new-item">Tờ Trình 4</a>
+                                    </div>
+                                </div>
+                            </div><!--panel Body -->
+                        </div><!-- widget-module -->
                     </div>
                 </div>
             </div>

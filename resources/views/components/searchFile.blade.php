@@ -35,7 +35,7 @@
                                     <select id="cateId" name="cateId" class="custom-select">
                                         <option value="0" selected>Tất Cả</option>
                                         @foreach(  $userCateList as $lst )
-                                            <option value="{{ $lst->doc_cate_id }}">{{ $lst->category->cate_name }}</option>
+                                            <option value="{{ $lst->doc_cate_id }}">{{ $lst->category ? $lst->category->cate_name : ''}}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -48,7 +48,7 @@
                             </div>
                             <div class="col-md-1">
                                 <div class="form-btn-block">
-                                    <button type="submit" class="btn btn-raised btn-primary waves-effect waves-light">Tìm Kiếm</button>
+                                    <button type="submit" class="btn btn-raised btn-primary btn-rounded waves-effect waves-light">Tìm Kiếm</button>
                                 </div>
                             </div>
                         </div>
@@ -69,13 +69,13 @@
                                     <thead>
                                     <tr>
                                         <th>Tên Tài Liệu</th>
-                                        <th>Hiệu Lực</th>
-                                        <th>Từ Ngày</th>
-                                        <th>Đến Ngày</th>
-                                        <th>Ngày Đăng</th>
-                                        <th>Người Đăng</th>
-                                        <th></th>
-                                        <th>Download</th>
+                                        <th width="10%">Thời Gian Hoàn Thành</th>
+                                        <th width="10%">Từ Ngày</th>
+                                        <th width="10%">Đến Ngày</th>
+                                        <th width="10%">Ngày Đăng</th>
+                                        <th width="10%">Người Đăng</th>
+                                        <th width="10%">Xem Trước</th>
+                                        <th width="10%">Tải Xuống</th>
                                     </tr>
                                     </thead>
                                     <tbody>

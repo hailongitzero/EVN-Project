@@ -33,6 +33,14 @@
                 </div>
             </div>
             <div class="slide-navigation-wrap" data-accordion>
+                <div class="nav-item has-sub" >
+                    <a href="{{ url('') }}">
+                        <span class="menu-icon-wrap icon ti-search"></span>
+                        <span class="menu-title">Tra Cứu</span>
+                    </a>
+                </div>
+            </div>
+            <div class="slide-navigation-wrap" data-accordion>
                 <div class="nav-item has-sub" data-control>
                     <a href="javascript:void(0)">
                         <span class="menu-icon-wrap icon ti-settings"></span>
@@ -84,14 +92,6 @@
                     </div>
                 @endforeach
             @endif
-            <div class="slide-navigation-wrap" data-accordion>
-                <div class="nav-item has-sub" >
-                    <a href="{{ url('') }}">
-                        <span class="menu-icon-wrap icon ti-search"></span>
-                        <span class="menu-title">Tra Cứu</span>
-                    </a>
-                </div>
-            </div>
             <div class="slide-navigation-wrap" data-accordion>
                 <div class="nav-item has-sub" >
                     <a href="{{ url('') }}">

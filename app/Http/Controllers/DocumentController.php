@@ -96,7 +96,7 @@ class DocumentController extends CommonController
                 );
 //                $validate = Validator::make($error);
 
-                return Redirect::back()->with('docAuthError', 'Bạn không được phân quyền truy xuất thư mục này.');
+                return Redirect::back()->with('docAuthError', 'Bạn không được phân quyền truy xuất thư mục này. Liên hệ ban quản trị để biết thêm thông tin');
             }
         }
     }
@@ -232,7 +232,7 @@ class DocumentController extends CommonController
             $layoutData = array(
                 'userData' => $userData,
 //            'menuData' => $this->userMenuData(),//data for menu
-                'menuData' => DocumentCategory::where('active', 1)->get(),
+                'menuData' => $this->userMenuData(),//data for menu
                 'documentList' => $documentList,
 //                'documentCate' => $documentCate,
             );

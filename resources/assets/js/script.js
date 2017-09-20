@@ -40,6 +40,23 @@ jQuery(document).ready(function () {
 
     $('#tbUserDocumentCateAut').DataTable();
 
+    if($('.apps-container-wrap').outerHeight() < $('.cbp-spmenu').outerHeight()){
+        var dist = $('.cbp-spmenu').outerHeight() - $('.apps-container-wrap').outerHeight();
+        $('.footer-cover').css('top', dist +'px');
+    };
+    $('.cbp-spmenu').on('click', function () {
+        setInterval(function () {
+            if($('.apps-container-wrap').outerHeight() < $('.cbp-spmenu').outerHeight()){
+                var dist = $('.cbp-spmenu').outerHeight() - $('.apps-container-wrap').outerHeight();
+                $('.footer-cover').css('top', dist +'px');
+            }else{
+                $('.footer-cover').css('top', 0);
+            };
+        }, 50);
+        setTimeout(function () {
+            clearInterval();
+        }, 1000);
+    });
     //drop box nation on change function event
     $('#company').change(function () {
         $('#dept_id option').css("display", "none");

@@ -25,20 +25,23 @@
     </div>
     <div class="top-menu">
         <div class="row">
-            {{--<div class="col-md-3">--}}
+            {{--<div class="col-md-5">--}}
                 {{--<ul class="top-controller-icons pull-left">--}}
                     {{--<li>--}}
-                        {{--<h4 style="color:#ff6a53">Thư Viện Điện Tử</h4>--}}
+                        {{--<h1 style="color:#ff6a53">Thư Viện Điện Tử</h1>--}}
                         {{--<a id="showLeftPush" href="javascript:void(0)" class="toggolebtn">--}}
                             {{--<span class="ti-view-grid"></span>--}}
                         {{--</a>--}}
                     {{--</li>--}}
                 {{--</ul>--}}
             {{--</div>--}}
-            <div class="col-md-10 text-center">
-                <img src="/resources/assets/images/banner_top.jpg" alt="" class="banner-top">
+            {{--<div class="col-md-6 text-right">--}}
+                {{--<img src="/resources/assets/images/banner_top.jpg" alt="" class="banner-top">--}}
+            {{--</div>--}}
+            <div class="col-md-11">
+                <img src="/resources/assets/images/lib-banner.png" alt="">
             </div>
-            <div class="col-md-2">
+            <div class="col-md-1">
                 <ul class="nav navbar-nav text-right">
                     <li class="dropdown icon-dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">

@@ -46,6 +46,14 @@
                 </div>
             </div>
             <div class="slide-navigation-wrap" data-accordion>
+                <div class="nav-item has-sub" >
+                    <a href="{{ url('searching') }}">
+                        <span class="menu-icon-wrap icon ti-search"></span>
+                        <span class="menu-title">Tra Cứu</span>
+                    </a>
+                </div>
+            </div>
+            <div class="slide-navigation-wrap" data-accordion>
                 <div class="nav-item has-sub" data-control>
                     <a href="javascript:void(0)">
                         <span class="menu-icon-wrap icon ti-folder"></span>
@@ -55,7 +63,7 @@
                 <div class="menu-content" data-content>
                     @if(isset($documentCate) && $documentCate)
                         @foreach( $documentCate as $menu)
-                            @if($menu->category->cate_group == 1)
+                            @if($menu->category && $menu->category->cate_group == 1)
                                 <div class="nav-item">
                                     <a href="{{ url('document/'.$menu->category->id) }}">
                                         <span class="menu-icon-wrap bullet"></span>
@@ -77,7 +85,7 @@
                 <div class="menu-content" data-content>
                     @if(isset($documentCate) && $documentCate)
                         @foreach( $documentCate as $menu)
-                            @if($menu->category->cate_group == 2)
+                            @if($menu->category && $menu->category->cate_group == 2)
                                 <div class="nav-item">
                                     <a href="{{ url('document/'.$menu->category->id) }}">
                                         <span class="menu-icon-wrap bullet"></span>
@@ -99,7 +107,7 @@
                 <div class="menu-content" data-content>
                     @if(isset($documentCate) && $documentCate)
                         @foreach( $documentCate as $menu)
-                            @if($menu->category->cate_group == 3)
+                            @if($menu->category && $menu->category->cate_group == 3)
                                 <div class="nav-item">
                                     <a href="{{ url('document/'.$menu->category->id) }}">
                                         <span class="menu-icon-wrap bullet"></span>
@@ -121,7 +129,7 @@
                 <div class="menu-content" data-content>
                     @if(isset($documentCate) && $documentCate)
                         @foreach( $documentCate as $menu)
-                            @if($menu->category->cate_group == 4)
+                            @if($menu->category && $menu->category->cate_group == 4)
                                 <div class="nav-item">
                                     <a href="{{ url('document/'.$menu->category->id) }}">
                                         <span class="menu-icon-wrap bullet"></span>
@@ -135,7 +143,7 @@
             </div>
             @if(isset($documentCate) && $documentCate)
                 @foreach( $documentCate as $menu)
-                    @if( $menu->category->cate_group != 1 &&  $menu->category->cate_group != 2 && $menu->category->cate_group != 3 && $menu->category->cate_group != 4 )
+                    @if( $menu->category && $menu->category->cate_group != 1 &&  $menu->category->cate_group != 2 && $menu->category->cate_group != 3 && $menu->category->cate_group != 4 )
                         <div class="slide-navigation-wrap" data-accordion>
                             <div class="nav-item has-sub" >
                                 <a href="{{ url('document/'.$menu->category->id) }}">
@@ -147,14 +155,6 @@
                     @endif
                 @endforeach
             @endif
-            <div class="slide-navigation-wrap" data-accordion>
-                <div class="nav-item has-sub" >
-                    <a href="{{ url('searching') }}">
-                        <span class="menu-icon-wrap icon ti-search"></span>
-                        <span class="menu-title">Tra Cứu</span>
-                    </a>
-                </div>
-            </div>
             <div class="slide-navigation-wrap" data-accordion>
                 <div class="nav-item has-sub" >
                     <a href="{{ url('picture-library') }}">

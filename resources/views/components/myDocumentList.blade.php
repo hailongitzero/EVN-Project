@@ -41,13 +41,13 @@
                                     <thead>
                                     <tr>
                                         <th>Tên Tài Liệu</th>
-                                        <th>Thời Gian Hoàn Thành</th>
-                                        <th>Từ Ngày</th>
-                                        <th>Đến Ngày</th>
-                                        <th>Ngày Đăng</th>
-                                        <th>Người Đăng</th>
-                                        <th></th>
-                                        <th>Download</th>
+                                        <th width="10%">Thời Gian Hoàn Thành</th>
+                                        <th width="10%">Từ Ngày</th>
+                                        <th width="10%">Đến Ngày</th>
+                                        <th width="10%">Ngày Đăng</th>
+                                        <th width="10%">Người Đăng</th>
+                                        <th width="10%">Xem Trước</th>
+                                        <th width="10%">Tải Xuống</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -55,7 +55,7 @@
                                         @foreach($documentList as $doc)
                                             <tr>
                                                 <td class="cateName">{{ $doc->doc_name }}</td>
-                                                <td>{{ $doc->total_time }}</td>
+                                                <td>{{ isset($doc->total_time) ? $doc->total_time.' ngày' : ''}}</td>
                                                 <td>{{ !is_null($doc->start_date) ? date('d-m-Y', strtotime($doc->start_date)) : ''}}</td>
                                                 <td>{{ !is_null($doc->end_date) ? date('d-m-Y', strtotime($doc->end_date)) : ''}}</td>
                                                 <td>{{ !is_null($doc->created_at) ? $doc->created_at->format('d-m-Y') : ''}}</td>

@@ -15,6 +15,8 @@ class CreateDocumentCategoryTable extends Migration
     {
         Schema::create('document_cate', function (Blueprint $table){
             $table->increments('id')->comment('document cate number');   //document cate number
+            $table->integer('srt_seq')->default(0)->comment('sort sequence');
+            $table->string('cate_cd', 3)->comment('document prefix code');
             $table->string('cate_name', 100)->comment('document cate name');    //document cate name
             $table->integer('cate_group',1)->nullable()->comment('document category group');
 //            $table->string('folder_url')->comment('folder url to save file');

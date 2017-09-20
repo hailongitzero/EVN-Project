@@ -15,6 +15,7 @@ class CreateDocumentTable extends Migration
     {
         Schema::create('document', function (Blueprint $table){
             $table->increments('id')->comment('document id'); //document id
+            $table->string('doc_cd', 10)->comment('document code');
             $table->integer('doc_cate_id')->comment('document category number'); //document category number
             $table->string('doc_name', 100)->comment('document name');  //document name
             $table->string('doc_url')->comment('document link');  //document link

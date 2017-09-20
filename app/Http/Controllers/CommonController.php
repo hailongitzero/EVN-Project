@@ -62,17 +62,19 @@ class CommonController extends Controller
      * get all document by document category
      */
     public function getSumDocumentByCate(){
-        $documentCate = DocumentCategory::whereIn('cate_group', [1,2,3,4])->orderBy('cate_group', 'asc')->get();
+        $documentCate = DocumentCategory::whereIn('cate_group', [1,2,3,4])->orderBy('srt_seq', 'asc')->orderBy('cate_group', 'asc')->get();
         $data = DB::table('document_cate')
             ->select(
                 "id"
+                , "srt_seq"
                 , "cate_name"
                 , "cate_group"
                 , DB::raw("(Select COUNT(*) From document where document.doc_cate_id = document_cate.id group by document_cate.id) as doc_count")
             )
-            ->whereIn('cate_group', [1,2,3,4])
-            ->groupBy('document_cate.id', 'document_cate.cate_name', 'document_cate.cate_group')
-            ->orderBy('document_cate.cate_name', 'asc', 'document_cate.cate_group', 'asc')
+//            ->whereIn('cate_group', [1,2,3,4])
+            ->where('active', 1)
+            ->groupBy('document_cate.id', 'document_cate.srt_seq', 'document_cate.cate_name', 'document_cate.cate_group')
+            ->orderBy('srt_seq', 'asc')
             ->get();
         return $data;
     }
@@ -86,6 +88,7 @@ class CommonController extends Controller
             )
             ->whereIn('cate_group', [1,2,3,4])
             ->groupBy('cate_group')
+            ->orderBy('srt_seq', 'asc')
             ->orderBy('cate_group', 'asc')
             ->get();
 
