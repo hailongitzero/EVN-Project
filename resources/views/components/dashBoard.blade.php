@@ -12,10 +12,10 @@
             <div class="dashBoard-section-1 nmbr-statistic-area">
                 <div class="row">
                     <div class="col-md-12">
-                        <marquee behavior="" direction="" class="marquee-title">Xin Chào
-                            @foreach($userData as $user)<span>{{ isset($user) && $user ? $user->name : '' }}</span>
+                        <marquee behavior="" direction="" class="marquee-title">Chào mừng
+                        @foreach($userData as $user)<span>{{ isset($user) && $user ? $user->name : '' }}</span>
                             @endforeach
-                            ! Chúc Bạn Một Ngày Mới Tốt Lành.</marquee>
+                             đến với trang Thư viện điện tử công ty EPS</marquee>
                     </div>
                 </div>
                 <div class="row">
@@ -205,7 +205,7 @@
                         <div class="box-data-1">
                                 <div class="box-header cyan">
                                     <div class="box-title">
-                                        <h4>Top Upload</h4>
+                                        <h4>Người Tải Lên Nhiều Nhất</h4>
                                     </div>
                                 </div>
                                 <div class="box-body">
@@ -219,7 +219,7 @@
                         <div class="box-data-1">
                             <div class="box-header cyan">
                                 <div class="box-title">
-                                    <h4>Top Upload</h4>
+                                    <h4>Người Tải Xuống Nhiều Nhất</h4>
                                 </div>
                             </div>
                             <div class="box-body">
@@ -233,7 +233,7 @@
                         <div class="box-data-1">
                             <div class="box-header cyan">
                                 <div class="box-title">
-                                    <h4>Top Upload</h4>
+                                    <h4>Thống Kê Chung</h4>
                                 </div>
                             </div>
                             <div class="box-body">

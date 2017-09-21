@@ -18,6 +18,7 @@ class CreateDocumentTable extends Migration
             $table->string('doc_cd', 10)->comment('document code');
             $table->integer('doc_cate_id')->comment('document category number'); //document category number
             $table->string('doc_name', 100)->comment('document name');  //document name
+            $table->string('description')->comment('document description');
             $table->string('doc_url')->comment('document link');  //document link
             $table->string('doc_tp')->comment('document format type');   //document format type
             $table->integer('download')->comment('document download quantity');

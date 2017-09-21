@@ -184,6 +184,7 @@ class DocumentController extends CommonController
             $userId = Auth::user()->id;
             $cateId = $request->cateId;
             $fileName = $request->fileName;
+            $description = $request->description;
             $totalTime = $request->totalTime;
             $fromDate = $request->fromDate;
             $toDate = $request->toDate;
@@ -202,6 +203,7 @@ class DocumentController extends CommonController
 
                 $fileData->doc_cate_id = $cateId;
                 $fileData->doc_name = $fileName;
+                $fileData->description = $description;
                 $fileData->doc_url = $path.'/'.$newFileName;
                 $fileData->doc_tp = strtolower($extension);
                 $fileData->upload_user_id = $userId;
@@ -288,7 +290,7 @@ class DocumentController extends CommonController
             $userId = Auth::user()->id;
             $sql = 'select *, user.name as author from document doc, users user WHERE 1 = 1 and doc.upload_user_id = user.id';
             if (strlen($request->authName) > 1){
-                $sql .= " and doc.upload_user_id in (select id from users where name like  '". $request->authname ."%')";
+                $sql .= " and doc.upload_user_id in (select id from users where name like  '%". $request->authname ."%')";
             }
             if ($request->cateId == 0 || $request->cateId == '0'){
                 $sql .= " and doc.doc_cate_id IN (SELECT doc_cate_id from user_doc_cate WHERE user_id IN (SELECT id FROM users WHERE id = ".$userId."))";

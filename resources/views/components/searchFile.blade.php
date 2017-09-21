@@ -60,12 +60,12 @@
                     <div class="box-data">
                         <div class="box-heading">
                             <div class="box-title">
-                                    <h4>Tra Cứu</h4>
+                                    <h4 class="text-red">Tra Cứu</h4>
                             </div>
                         </div>
                         <div class="box-body">
                             <div class="basic-datatable-block">
-                                <table id="docCateTable" class="display table table-bordered basic-data-table">
+                                <table id="tbSearchDoc" class="display table table-bordered basic-data-table">
                                     <thead>
                                     <tr>
                                         <th>Tên Tài Liệu</th>

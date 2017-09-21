@@ -30,7 +30,7 @@
                                 <div class="row">
                                     <div class="col-md-4">
                                         @if(isset($documentCate->category))
-                                            <h4>{{ $documentCate->category->cate_name }}</h4>
+                                            <h4 class="text-red">{{ $documentCate->category->cate_name }}</h4>
                                         @endif
                                     </div>
                                     <div class="col-md-8 text-right">
@@ -63,11 +63,12 @@
                                         @if(isset($documentList))
                                             @foreach($documentList as $doc)
                                                 <tr>
-                                                    <td class="cateName">{{ $doc->doc_name }}</td>
+                                                    <td class="cateName" data-toggle="tooltip" data-placement="top" title="{{ $doc->description }}">{{ $doc->doc_name }}</td>
                                                     <td>{{ isset($doc->total_time) ? $doc->total_time.' ngày' : '' }}</td>
                                                     <td>{{ !is_null($doc->created_at) ? $doc->created_at->format('d-m-Y') : ''}}</td>
                                                     <td>{{ $doc->documentAuthor->name }}</td>
                                                     <td class="controller-column">
+                                                        <a href="javascript:void(0)" class="reviewDoc" data="{{ url($doc->doc_url) }}" data-toggle="modal" data-target="#viewDocModal">
                                                         @if($doc->doc_tp == 'docx' || $doc->doc_tp == 'doc')
                                                             <i class="fa fa-file-word-o edit-icon"></i>
                                                         @elseif($doc->doc_tp == 'xslx' || $doc->doc_tp == 'xsl')
@@ -83,6 +84,7 @@
                                                         @else
                                                             <i class="fa fa-file edit-icon"></i>
                                                         @endif
+                                                        </a>
                                                     </td>
                                                     </td>
                                                     <td class="controller-column">
@@ -115,12 +117,13 @@
                                         @if(isset($documentList))
                                             @foreach($documentList as $doc)
                                                 <tr>
-                                                    <td class="cateName">{{ $doc->doc_name }}</td>
+                                                    <td class="cateName" data-toggle="tooltip" data-placement="top" title="{{ $doc->description }}">{{ $doc->doc_name }}</td>
                                                     <td>{{ !is_null($doc->start_date) ? date('d-m-Y', strtotime($doc->start_date)) : ''}}</td>
                                                     <td>{{ !is_null($doc->end_date) ? date('d-m-Y', strtotime($doc->end_date)) : ''}}</td>
                                                     <td>{{ !is_null($doc->created_at) ? $doc->created_at->format('d-m-Y') : ''}}</td>
                                                     <td>{{ $doc->documentAuthor->name }}</td>
                                                     <td class="controller-column">
+                                                        <a href="javascript:void(0)" class="reviewDoc" data="{{ url($doc->doc_url) }}" data-toggle="modal" data-target="#viewDocModal">
                                                         @if($doc->doc_tp == 'docx' || $doc->doc_tp == 'doc')
                                                             <i class="fa fa-file-word-o edit-icon"></i>
                                                         @elseif($doc->doc_tp == 'xslx' || $doc->doc_tp == 'xsl')
@@ -136,6 +139,7 @@
                                                         @else
                                                             <i class="fa fa-file edit-icon"></i>
                                                         @endif
+                                                        </a>
                                                     </td>
                                                     </td>
                                                     <td class="controller-column">
@@ -166,10 +170,11 @@
                                         @if(isset($documentList))
                                             @foreach($documentList as $doc)
                                                 <tr>
-                                                    <td class="cateName">{{ $doc->doc_name }}</td>
+                                                    <td class="cateName" data-toggle="tooltip" data-placement="top" title="{{ $doc->description }}">{{ $doc->doc_name }}</td>
                                                     <td>{{ !is_null($doc->created_at) ? $doc->created_at->format('d-m-Y') : ''}}</td>
                                                     <td>{{ $doc->documentAuthor->name }}</td>
                                                     <td class="controller-column">
+                                                        <a href="javascript:void(0)" class="reviewDoc" data="{{ url($doc->doc_url) }}" data-toggle="modal" data-target="#viewDocModal">
                                                         @if($doc->doc_tp == 'docx' || $doc->doc_tp == 'doc')
                                                             <i class="fa fa-file-word-o edit-icon"></i>
                                                         @elseif($doc->doc_tp == 'xslx' || $doc->doc_tp == 'xsl')
@@ -185,6 +190,7 @@
                                                         @else
                                                             <i class="fa fa-file edit-icon"></i>
                                                         @endif
+                                                        </a>
                                                     </td>
                                                     </td>
                                                     <td class="controller-column">
@@ -207,7 +213,7 @@
 </div>
 <!-- Modal Thêm mới danh mục tài liệu -->
 <div class="modal fade" id="addDocumentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-md" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Tải Tài Liệu Lên</h5>
@@ -228,7 +234,12 @@
                                 @endif
                             </div>
                         </div>
-                        @if(isset($documentCate->category) && $documentCate->category->id == 1)
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                <textarea id="inpDocDesc" name="inpDocDesc" placeholder="Mô tả tài liệu" rows="4"></textarea>
+                            </div>
+                        </div>
+                        @if(isset($documentCate->category) && ($documentCate->category->id == 1 || $documentCate->category->id == 2))
                             <div class="form-group row">
                                 <div class="col-md-12">
                                     <input type="number" class="form-control" id="inpDocTime" name="inpDocTime" placeholder="Thời Gian Hoàn Thành">
@@ -245,14 +256,14 @@
                                 </div>
                             </div>
                         @endif
-                        <div class="form-group">
+                        <div class="form-group text-right">
                             <label id="lblInpFile" for="inpFile" class="col-md-6 col-form-label left-align">Tài Liệu Tải Lên</label>
                             <div class="col-lg-6 btn btn-primary waves-effect waves-light">
                                 <span><i class="fa fa-cloud-upload" aria-hidden="true"></i> Chọn Tài Liệu</span>
                                 <input type="file" id="inpFile" accept="model/vnd-dwf, image/vnd.dwg, application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint,text/plain, application/pdf">
                             </div>
                         </div>
-                        <div class="form-btn-block">
+                        <div class="form-btn-block text-center">
                             <button type="button" id="btnAddDoc" class="btn btn-raised btn-primary btn-rounded waves-effect waves-light">Tải Lên</button>
                             <button type="button" class="btn btn-outline-default btn-xs btn-raised btn-rounded waves-effect" data-dismiss="modal" aria-label="Close">Hủy</button>
                         </div>
@@ -280,12 +291,28 @@
                             <input type="text" class="form-control" id="mdCateName" name="mdCateName" placeholder="Tên Danh Mục">
                             <input type="hidden" id="mdCateId" name="mdCateId" value="">
                         </div>
-                        <div class="form-btn-block">
+                        <div class="form-btn-block text-center">
                             <button type="button" id="btnUpdateDocCate" class="btn btn-raised btn-primary waves-effect waves-light">Cập Nhật</button>
                             <button type="button" class="btn btn-outline-default btn-xs btn-raised waves-effect" data-dismiss="modal" aria-label="Close">Hủy</button>
                         </div>
                     </form>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- View Document Modal -->
+<div class="modal fade" id="viewDocModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Xem Trước Tài Liệu</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body docView">
+                <iframe src="" frameborder="0"></iframe>
             </div>
         </div>
     </div>

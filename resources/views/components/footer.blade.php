@@ -11,8 +11,8 @@
             <div class="footer-divider">
             </div>
             <div class="row">
-                <div class="col-md-12 text-center">
-                    <h2>CÔNG TY DỊCH VỤ SỬA CHỮA CÁC NHÀ MÁY ĐIỆN</h2>
+                <div class="col-md-12">
+                    <h3>CÔNG TY DỊCH VỤ SỬA CHỮA CÁC NHÀ MÁY ĐIỆN</h3>
                 </div>
             </div>
             <div class="row">
@@ -34,7 +34,7 @@
                 </div>
                 <div class="col-md-2">
                     <i class="fa fa-internet-explorer edit-icon"></i>
-                    <span>www.evn.com.vn</span>
+                    <a href="{{ url('www.eps.genco3.vn') }}" target="_blank"><span>www.eps.genco3.vn</span></a>
                 </div>
             </div>
         </div>

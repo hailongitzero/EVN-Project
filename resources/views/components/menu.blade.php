@@ -31,7 +31,7 @@
                         <img src="{{ url('resources/assets/images/No-Avatar.png') }}" alt="img" class="img-responsive">
                     </div>
                     <div class="user-info">
-                        <h5><a href="{{ url('login') }}">Login</a></h5>
+                        <h5><a href="{{ url('login') }}">Đăng Nhập</a></h5>
                     </div>
                 </div>
             @endif
@@ -41,7 +41,7 @@
                 <div class="nav-item has-sub" >
                     <a href="{{ url('') }}">
                         <span class="menu-icon-wrap icon ti-home"></span>
-                        <span class="menu-title">Dashboard</span>
+                        <span class="menu-title">Trang Chủ</span>
                     </a>
                 </div>
             </div>

@@ -32,7 +32,7 @@
                     <div class="box-data">
                         <div class="box-heading">
                             <div class="box-title">
-                                <h4>Tài Liệu Của Tôi</h4>
+                                <h4 class="text-red">Tài Liệu Của Tôi</h4>
                             </div>
                         </div>
                         <div class="box-body">
@@ -54,7 +54,7 @@
                                     @if(isset($documentList))
                                         @foreach($documentList as $doc)
                                             <tr>
-                                                <td class="cateName">{{ $doc->doc_name }}</td>
+                                                <td class="cateName" data-toggle="tooltip" data-placement="top" title="{{ $doc->description }}">{{ $doc->doc_name }}</td>
                                                 <td>{{ isset($doc->total_time) ? $doc->total_time.' ngày' : ''}}</td>
                                                 <td>{{ !is_null($doc->start_date) ? date('d-m-Y', strtotime($doc->start_date)) : ''}}</td>
                                                 <td>{{ !is_null($doc->end_date) ? date('d-m-Y', strtotime($doc->end_date)) : ''}}</td>

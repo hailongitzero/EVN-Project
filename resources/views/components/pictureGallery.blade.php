@@ -25,7 +25,18 @@
                     <div class="box-data">
                         <div class="box-heading">
                             <div class="box-title">
-                                <h4>Thư Viện Hình</h4>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <h4 class="text-red">Thư Viện Hình</h4>
+                                    </div>
+                                    <div class="col-md-8 text-right">
+                                        <div class="page-title-block top-add-icon">
+                                            <a href="#" class="btn btn-rounded btn-cyan" data-toggle="modal" data-target="#addImageModal">
+                                                <i class="fa fa-upload edit-icon"></i> Tải Lên
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="box-body">

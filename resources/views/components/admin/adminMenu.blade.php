@@ -28,7 +28,7 @@
                 <div class="nav-item has-sub" >
                     <a href="{{ url('') }}">
                         <span class="menu-icon-wrap icon ti-home"></span>
-                        <span class="menu-title">Dashboard</span>
+                        <span class="menu-title">Trang Chủ</span>
                     </a>
                 </div>
             </div>
